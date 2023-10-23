@@ -1,0 +1,13 @@
+table{
+    margin: 1em;
+    border: 3px solid black;
+    display: flex;
+}
+td{
+    text-align: center;
+    border: 1px solid black;
+    margin: 1em;
+}
+img{
+    width: 250px;
+}

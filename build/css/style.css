@@ -1,0 +1,143 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Calibri', sans-serif;
+    font-size: 1.4rem;
+    background-color: rgb(114, 154, 188);
+}
+
+img {
+    width: 10rem;
+
+}
+
+/* Estilos para la barra de navegación (nav) */
+
+nav {
+    background-color: #535354;
+    color: #fff;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1{
+    text-align: center;
+    background-color: steelblue;
+    color: #fff;
+    border: .5px solid black;
+}
+
+/* Estilos para los menús desplegables */
+
+.menu-desp {
+    position: relative;
+}
+
+.menu-desp-content {
+    display: none;
+    position: absolute;
+    background-color: #535354;
+}
+
+.menu-desp:hover .menu-desp-content {
+    display: block;
+    line-height: 2rem;
+    cursor: pointer;
+    margin: auto 0 0 auto;
+    width: 6rem;
+    background-color: #535354;
+    border-radius: .5rem;
+
+}
+
+.menu-desp-content li:hover {
+    background-color: lightslategrey;
+    padding: 0;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+
+}
+
+.main-container img {
+    width: 50%;
+    margin-left: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.img-container {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 70px;
+    font-weight: 700;
+    margin-top: -230px;
+    margin-left: 1.5rem;
+    background: linear-gradient(#130336, #5607FD, #755FA387, #0A011B2B, #30098366);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.boton{
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;background-color: #5607FD;
+}
+
+.boton:hover{
+    background-color: steelblue;
+    transition: 0.5s ;
+}
+.container-productos{
+    margin: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.container-productos img{
+    width: 80%;
+    height: 80%;
+}
+
+
+
+
+
