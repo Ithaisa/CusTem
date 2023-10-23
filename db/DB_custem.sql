@@ -52,3 +52,11 @@ CREATE TABLE DisenosPersonalizados (
     FechaCreacion DATE,
     FOREIGN KEY (IDCliente) REFERENCES Clientes(IDCliente)
 );
+
+-- Crear la tabla de Vendedores
+CREATE TABLE Vendedores (
+    Id_Vendedor INT PRIMARY KEY,
+    Nombre VARCHAR(50),
+    Apellido VARCHAR(100),
+    Tlfn INT(9)
+);
