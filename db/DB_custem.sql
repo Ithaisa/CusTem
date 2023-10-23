@@ -28,20 +28,21 @@ CREATE TABLE Pedidos (
     FechaPedido DATE,
     EstadoPedido VARCHAR(20),
     Total DECIMAL(10, 2),
+    Descripcion VARCHAR(250),
     FOREIGN KEY (IDCliente) REFERENCES Clientes(IDCliente)
 );
 
--- Crear la tabla de Detalles de Pedido
-CREATE TABLE DetallesPedido (
-    IDDetalle INT PRIMARY KEY,
-    IDPedido INT,
-    IDProducto INT,
-    Cantidad INT,
-    PrecioUnitario DECIMAL(10, 2),
-    Subtotal DECIMAL(10, 2),
-    FOREIGN KEY (IDPedido) REFERENCES Pedidos(IDPedido),
-    FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto)
-);
+-- -- Crear la tabla de Detalles de Pedido
+-- CREATE TABLE DetallesPedido (
+--     IDDetalle INT PRIMARY KEY,
+--     IDPedido INT,
+--     IDProducto INT,
+--     Cantidad INT,
+--     PrecioUnitario DECIMAL(10, 2),
+--     Subtotal DECIMAL(10, 2),
+--     FOREIGN KEY (IDPedido) REFERENCES Pedidos(IDPedido),
+--     FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto)
+-- );
 
 -- Crear la tabla de Diseños Personalizados
 CREATE TABLE DisenosPersonalizados (
