@@ -61,3 +61,9 @@ CREATE TABLE Vendedores (
     Apellido VARCHAR(100),
     Tlfn INT(9)
 );
+-- Crea la tabla usuario
+CREATE TABLE Usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mail VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
