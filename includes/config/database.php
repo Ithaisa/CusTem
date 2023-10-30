@@ -5,7 +5,6 @@
             echo "Error: no se puede conectar a la base de datos.";
             exit;
         }else{
-            echo "Conectar a la base de datos.";
             return $db;
         }
     }
