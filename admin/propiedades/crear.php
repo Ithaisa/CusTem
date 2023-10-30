@@ -7,78 +7,54 @@
     define('MEDIDA', 1024);
 
     //Inicializa los valores a vacío
-    $titulo='';
-    $precio='';
+    $nombre='';
     $descripcion='';
-    $vendedores_id='';
-    $estacionamiento='';
-    $wc='';
-    $habitaciones='';
-    $creado= '';
+    $precio='';
+    $categoria='';
+    $imagen='';
 
     if ($_SERVER['REQUEST_METHOD']==="POST"){
          //comprobamos los datos
-        $titulo= $_POST['titulo'];
-        $precio= $_POST['precio'];
-        $imagen= $_FILES['imagen'];
+        $nombre= $_POST['nombre'];
         $descripcion= $_POST['descripcion'];
-        $vendedores_id=$_POST['vendedor'];
-        $estacionamiento=$_POST['estacionamiento'];
-        $wc=$_POST['wc'];
-        $habitaciones=$_POST['habitaciones'];
-        
-        
-        
+        $precio= $_POST['precio'];
+        $categoria= $_FILES['categoria'];
+        $imagen= $_POST['imagen'];
         //creamos la carpeta imágenes en la raíz del proyecto si es que no existe
         $carpetaImagenes='../../imagenes/';
         if (!is_dir($carpetaImagenes)){
             mkdir($carpetaImagenes);
         }
-
-       //controlando los mensajes de error en la validación del formulario
-        if (!$titulo) {
-            $errores[]="Debes añadir un título";
-        }
-        else if (!$precio) {
-            $errores[]="Debes añadir un precio";
-        }
-        else if (!$imagen) {
-            $errores[]="Debes añadir una imagen";
+        //controlando los mensajes de error en la validación del formulario
+        if (!$nombre) {
+            $errores[]="Debes añadir un nombre";
         }
         else if (!$descripcion) {
             $errores[]="Debes añadir una descripción";
         }
-        else if (!$vendedores_id) {
-            $errores[]="Debes seleccionar un vendedor";
+        else if (!$precio) {
+            $errores[]="Debes añadir un precio";
         }
-        else if (!$estacionamiento) {
-            $errores[]="Debes seleccionar un estacionamiento";
+        else if (!$categoria) {
+            $errores[]="Debes añadir una categoría";
         }
-        else if (!$wc) {
-            $errores[]="Debes seleccionar un número de wc";
-        }
-        else if (!$habitaciones) {
-            $errores[]="Debes seleccionar un número de habitaciones";
+        else if (!$imagen) {
+            $errores[]="Debes seleccionar una imagen";
         }
 
         //valida la imagen por tamaño (medida máxima en kb)
         if (($imagen['size']/1024 > MEDIDA)){
             $errores[]="Reduzca el tamaño de la imagen, debe ser menor a ". MEDIDA ."kb.";
-        }
-        
+        }       
         else{
             //Generar nombre único
             $nombreImagen=md5(uniqid(rand(),true)) . ".jpg";
-        }
-
+        }       
         
-        
-
         //ahora es donde realmente insertamos los valores en la bd. Solo se introduce el campo si el array de errores está vacío
         if(empty($errores)){
-            $date = date("+Y/m/d");
-            $query="INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones,wc,estacionamiento, creado, vendedores_id)   
-            VALUES ('$titulo', '$precio', '$nombreImagen','$descripcion', '$habitaciones','$wc','$estacionamiento', '$date', '$vendedores_id');";
+            $query="INSERT INTO productos(nombre, descripcion, precio, categoria, imagen)   
+            VALUES ('$nombre', '$descripcion', '$precio', '$categoria','$imagen');";
         $resultado=mysqli_query($db,$query);
 
         if ($resultado) {
@@ -87,10 +63,7 @@
             move_uploaded_file($imagen['tmp_name'], $carpetaImagenes.$nombreImagen);
         }
     }
-}
-    
-    
-    
+}    
 ?>
 
 <main class="contenedor seccion">
@@ -104,8 +77,8 @@
         <fieldset>
             <legend>Informacion General</legend>
 
-            <label for="titulo">Titulo: </label>
-            <input type="text" id="titulo" name="titulo">
+            <label for="titulo">Nombre: </label>
+            <input type="text" id="nombre" name="nombre">
 
             <label for="precio">Precio:</label>
             <input type="text" name="precio" id="precio">
@@ -114,16 +87,10 @@
             <input type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg">
 
             <label for="Descripcion">Descripcion:</label>
-            <input type="text-area" name="descripcion" id="descripcion" placeholder="Descripción de la propiedad...">
+            <input type="text-area" name="descripcion" id="descripcion" placeholder="Descripción del producto...">
 
-            <label for="estacionamiento">Estacionamiento:</label>
-            <input type="text-area" name="estacionamiento" id="estacionamiento" placeholder="Número de estacionamientos...">
-
-            <label for="wc">WC:</label>
-            <input type="text-area" name="wc" id="wc" placeholder="Número de baños...">
-
-            <label for="habitaciones">Habitaciones:</label>
-            <input type="text-area" name="habitaciones" id="habitaciones" placeholder="Número de habitaciones...">
+            <label for="estacionamiento">Categoría:</label>
+            <input type="text-area" name="categoria" id="categoria" placeholder="Ropa, taza...">
 
         </fieldset>
         <fieldset>
@@ -134,11 +101,9 @@
         </fieldset>
         <input type="submit" name="" id="" class="boton boton-verde" value="Crear propiedad">
     </form>
-    <a href="/admin/propiedades/actualizar.php" class="boton boton-verde">Actualizar Propiedad</a>
-    <a href="/admin/propiedades/borrar.php" class="boton boton-verde">Borrar Propiedad</a>
     <a href="/admin/index.php" class="boton boton-verde">Volver</a>
 </main>
 
-<?php
-    incluirTemplate('footer');
-?>
+<!-- <?php
+    //incluirTemplate('footer');
+?> -->
