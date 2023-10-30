@@ -18,8 +18,8 @@
         $nombre= $_POST['nombre'];
         $descripcion= $_POST['descripcion'];
         $precio= $_POST['precio'];
-        $categoria= $_FILES['categoria'];
-        $imagen= $_POST['imagen'];
+        $categoria= $_POST['categoria'];
+        $imagen= $_FILES['imagen'];
         //creamos la carpeta imágenes en la raíz del proyecto si es que no existe
         $carpetaImagenes='../../imagenes/';
         if (!is_dir($carpetaImagenes)){
