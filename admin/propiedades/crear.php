@@ -54,7 +54,7 @@
         //ahora es donde realmente insertamos los valores en la bd. Solo se introduce el campo si el array de errores está vacío
         if(empty($errores)){
             $query="INSERT INTO productos(nombre, descripcion, precio, categoria, imagen)   
-            VALUES ('$nombre', '$descripcion', '$precio', '$categoria','$imagen');";
+            VALUES ('$nombre', '$descripcion', '$precio', '$categoria','$nombreImagen');";
         $resultado=mysqli_query($db,$query);
 
         if ($resultado) {
