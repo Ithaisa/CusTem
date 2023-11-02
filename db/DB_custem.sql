@@ -2,7 +2,7 @@ CREATE DATABASE Custem;
 
 -- Crear la tabla de Clientes
 CREATE TABLE Clientes (
-    IDCliente INT PRIMARY KEY,
+    IDCliente INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50),
     Apellido VARCHAR(50),
     CorreoElectronico VARCHAR(100),
@@ -13,7 +13,7 @@ CREATE TABLE Clientes (
 
 -- Crear la tabla de Productos
 CREATE TABLE Productos (
-    IDProducto INT PRIMARY KEY,
+    IDProducto INTAUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(100),
     Descripcion TEXT,
     Precio DECIMAL(10, 2),
@@ -23,7 +23,7 @@ CREATE TABLE Productos (
 
 -- Crear la tabla de Pedidos
 CREATE TABLE Pedidos (
-    IDPedido INT PRIMARY KEY,
+    IDPedido INT AUTO_INCREMENT PRIMARY KEY ,
     IDCliente INT,
     FechaPedido DATE,
     EstadoPedido VARCHAR(20),
