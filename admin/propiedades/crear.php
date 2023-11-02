@@ -85,7 +85,7 @@
 
             <label for="imagen">Imagen:</label>
             <input type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg">
-
+            </form>
             <label for="Descripcion">Descripcion:</label>
             <input type="text-area" name="descripcion" id="descripcion" placeholder="Descripción del producto...">
 
@@ -100,7 +100,7 @@
             </select>
         </fieldset>
         <input type="submit" name="" id="" class="boton boton-verde" value="Crear propiedad">
-    </form>
+    
     <a href="/admin/index.php" class="boton boton-verde">Volver</a>
 </main>
 
