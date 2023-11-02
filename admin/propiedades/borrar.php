@@ -1,22 +1,25 @@
 <?php
-    require '../../includes/funciones.php';
-    require '../../includes/config/database.php';
-    incluirTemplate('header');
-
-
-if (isset($_GET['id'])) {
     $id = $_GET['id'];
+    require '../../includes/config/database.php';
     $db = conectarBD();
-    $query = "DELETE FROM propiedades WHERE id = $id";
 
-    if (mysqli_query($db, $query)) {
-        echo json_encode(['success' => true]);
-    } else {
-        echo json_encode(['success' => false]);
+    $deleteQuery = "DELETE from productos where IDProducto = $id";
+    $imgName = "SELECT * from productos where IDProducto = $id";
+
+    $img = mysqli_query($db, $imgName);
+    while($fila=mysqli_fetch_object($img)){
+        $image = $fila->Imagen;
     }
-}
-?>
 
-<?php
-    incluirTemplate('footer');
+
+    $ruta = "../../imagenes/".$image;
+    $delete = mysqli_query($db, $deleteQuery);
+
+    if($delete) {
+        unlink($ruta);
+        header("Location:/admin/index-php/?resultado=3");
+    }
+    else{
+        header("Location:/admin/index-php/?resultado=4");
+    }
 ?>
