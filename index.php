@@ -1,6 +1,8 @@
 <?php
     require './includes/funciones.php';
     incluirTemplate('header');
+
+    
 ?>
     <main>
         <div class="main-container">
