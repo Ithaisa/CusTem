@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CusTem</title>
-    <link rel="stylesheet" href="/build/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <nav class="navegador">
             <div class="container">
                 <div class="logo" >
-                    <img src="/build/img/LOGO.jpg" alt="logo" href="#inicio">
+                    <img src="/public/img/LOGO.jpg" alt="logo" href="#inicio">
                 </div>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
