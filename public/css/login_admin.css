@@ -1,0 +1,72 @@
+/* table{
+    margin: 1em;
+    border: 3px solid black;
+    display: flex;
+}
+td{
+    text-align: center;
+    border: 1px solid black;
+    margin: 1em;
+}
+img{
+    width: 250px;
+} */
+
+body {
+    background: url("/public/img/admin\ login.jfif");
+    font-family: Arial, sans-serif;
+    padding: 250px;
+
+    
+}
+
+h2{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+
+}
+
+.login-container {
+    width: 500px;
+    height: 450px;
+    margin: 30px auto 30px auto;
+    padding: 20px;
+    background-color: #c9d6ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 45px;
+    font-weight: bold;
+    
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 91%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.btn {
+    width: 95%;
+    padding: 10px;
+    margin: 20px 0 20px;
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    background-color: #5c6bc0;
+    transition: all 0.4s ease-in-out;
+}
