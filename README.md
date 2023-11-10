@@ -79,13 +79,16 @@ El usuario sin registrar no dispone de ninguna acción la cual no esté implemen
   - Categoría (Varchar, 50)
   - Imagen (Varchar, 200)
   
-### Entidad: DisenosPersonalizados
+### Entidad: DetallesPedido
 - Atributos:
-  - IDDiseno (int, Primary Key)
-  - IDCliente (int, Foreign Key referencia a Clientes.IDClientes)
-  - NombreDiseno (Varchar, 100)
-  - Imagen (Varchar, 200)
-  - FechaCreacion (date)
+  - IDDetalle (int, Primary Key)
+  - IDPedido (int)
+  - IDProducto (int)
+  - Cantidad (int)
+  - PrecioUnitario (decimal, (10,2))
+  - Subtotal (decimal, (10,2))
+- Relación con Pedidos: 1:n (Pedidos.IDPedido -> DetallesPedido.IDPedido)
+- Relación con Productos: 1:n (Productos.IDProducto -> DetallesPedido.IDProducto)
 
 ### Relaciones:
 - Administradores (1:1) Usuario
@@ -167,4 +170,5 @@ INSERT INTO Produtos (IDProducto,Nombre,Descripcion,Precio,Categoria,Imagen) VAL
   - Refinar y optimizar consultas en la base de datos.
   - Añadir secciones sobre tecnologías utilizadas y requisitos del sistema.
   - Implementación del CRUD en PDO
-  - Modificación y adición en la Documentación
+  - Modificación y adición en la Documentación en Inglés (ENGLISH README.md)
+  - 
