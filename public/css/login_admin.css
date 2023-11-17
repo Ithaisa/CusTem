@@ -14,10 +14,8 @@ img{
 
 body {
     background: url("/public/img/admin\ login.jfif");
-    font-family: Arial, sans-serif;
-    padding: 250px;
-
-    
+    background-size: cover;
+    font-family: Arial, sans-serif;    
 }
 
 h2{

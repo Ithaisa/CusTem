@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php 
     include 'app.php';
     function incluirTemplate($nombre, $inicio=false){
@@ -5,34 +6,35 @@
     }
 
     /**
-     * Comprueba si existe un usuario con el correo indicado y comprueba
-     * si la contraseña es correcta.
-     */
-    function comprobarUsuario($db, $usuario):bool{
-        $query = "SELECT * FROM Usuario WHERE mail='$usuario'";
-        $result = $db->query($query);
-        $resultado = false;
-        while($row = $result->fetch_object()){
-            if(password_verify($_POST['password'], $row->password)){
-                session_start();
-                $_SESSION['id'] = $row->id;
-                $resultado = true;
-            }
-        }
-        return $resultado;
-    }
-
-    /**
      * Trata de iniciar sesión con el usuario
      * @return 'true' si inicia sesión correctamente.
      */
-    function iniciarUsuario(){
-        $db=conectarBD();
-        if(isset($_POST['usuario'])){
-            $usuario = $_POST['usuario'];
-            return comprobarUsuario($db, $usuario);
+    function iniciarUsuario($db){
+        // Obtiene los valores del formulario
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        
+        //Valor return
+        $result = false;
+        // Realiza la consulta para obtener el usuario
+        $sql = "SELECT * FROM usuario WHERE username = '$username'";
+        $result = $db->query($sql);
+        if ($result->num_rows > 0) {
+            // Usuario encontrado, verifica la contraseña
+                $row = $result->fetch_assoc();
+                $hashedPassword = $row["password"];
+                if (password_verify($password, $hashedPassword)) {
+            // Contraseña válida, inicio de sesión exitoso
+            session_start();
+            $_SESSION["username"] = $username;
+            $result = true;
+            } else {
+            echo "Contraseña incorrecta";
+            }
+        } else {
+        echo "Usuario no encontrado";
         }
-        return false;
+        return $result;
     
     }
     /**
@@ -42,7 +44,7 @@
     function crearUsuario(){
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
-        $db=conectarBD();
+        $db=conectarBD(); 
         $query = "SELECT *  FROM Usuario WHERE mail='$usuario'";
         $result = $db->query($query);
         $resultado = false;
@@ -56,4 +58,3 @@
             return true;
         }
     }
-?>
