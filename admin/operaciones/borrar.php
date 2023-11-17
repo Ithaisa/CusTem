@@ -3,23 +3,28 @@
     require '../../includes/config/database.php';
     $db = conectarBD();
 
-    $deleteQuery = "DELETE from productos where IDProducto = $id";
-    $imgName = "SELECT * from productos where IDProducto = $id";
+    // Nombre de la imagen antes de eliminarla
+    $nombreImagenQuery = "SELECT Imagen FROM productos WHERE IDProducto = ?";
+    $stmtImg = $db->prepare($nombreImagenQuery);
+    $stmtImg->bind_param('i', $id);
+    $stmtImg->execute();
+    $stmtImg->bind_result($image);
+    $stmtImg->fetch();
+    $stmtImg->close();
 
-    $img = mysqli_query($db, $imgName);
-    while($fila=mysqli_fetch_object($img)){
-        $image = $fila->Imagen;
-    }
 
+    $deleteQuery = "DELETE FROM productos WHERE IDProducto = ?";
+    $stmt = $db->prepare($deleteQuery);
+    $stmt->bind_param('i', $id);
 
-    $ruta = "../../imagenes/".$image;
-    $delete = mysqli_query($db, $deleteQuery);
+    $stmt->execute();
 
-    if($delete) {
+    if ($stmt->affected_rows > 0) {
+        $ruta = "../../imagenes/" . $image;
         unlink($ruta);
-        header("Location:/admin/index-php/?resultado=3");
+        header("Location: /admin?resultado=3");
+    } else{
+        header("Location: /admin?resultado=4");
     }
-    else{
-        header("Location:/admin/index-php/?resultado=4");
-    }
+
 ?>

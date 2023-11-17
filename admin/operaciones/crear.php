@@ -73,24 +73,24 @@
                 <?php echo $error; ?>
             </div>
     <?php } ?>
-    <form action="/admin/propiedades/crear.php" class="formulario" method="POST" enctype="multipart/form-data">
+    <form action="/admin/operaciones/crear.php" class="formulario-ad" method="POST" enctype="multipart/form-data">
         <fieldset>
-            <legend>Informacion General</legend>
+            <legend class="legend-ad">Informacion General</legend>
 
-            <label for="titulo">Nombre: </label>
-            <input type="text" id="nombre" name="nombre">
+            <label class="label-ad" for="titulo">Nombre: </label>
+            <input class="input-ad" type="text" id="nombre" name="nombre">
 
-            <label for="precio">Precio:</label>
-            <input type="text" name="precio" id="precio">
+            <label  class="label-ad" for="precio">Precio:</label>
+            <input class="input-ad" type="number" name="precio" id="precio">
 
-            <label for="imagen">Imagen:</label>
-            <input type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg">
-            </form>
-            <label for="Descripcion">Descripcion:</label>
-            <input type="text-area" name="descripcion" id="descripcion" placeholder="Descripción del producto...">
+            <label class="label-ad" for="imagen">Imagen:</label>
+            <input class="input-ad" type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg">
+            
+            <label class="label-ad" for="Descripcion">Descripcion:</label>
+            <input class="textarea-ad" type="text-area" name="descripcion" id="descripcion" placeholder="Descripción del producto...">
 
-            <label for="estacionamiento">Categoría:</label>
-            <input type="text-area" name="categoria" id="categoria" placeholder="Ropa, taza...">
+            <label class="label-ad" for="estacionamiento">Categoría:</label>
+            <input class="textarea-ad" type="text-area" name="categoria" id="categoria" placeholder="Ropa, taza...">
 
         </fieldset>
         <fieldset>
@@ -98,10 +98,10 @@
             <select name="vendedor" id="vendedor">
                 <option value="1">César</option>
             </select>
-        </fieldset>
-        <input type="submit" name="" id="" class="boton boton-verde" value="Crear propiedad">
-    
-    <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+        </fieldset>    
+        <input type="submit" name="" id="" class="btn-add" value="Crear propiedad">
+    </form>
+    <a href="/admin/index.php" class="btn-add">Volver</a>
 </main>
 
 <!-- <?php

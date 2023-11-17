@@ -3,8 +3,8 @@
     require '../../includes/funciones.php';
     require '../../includes/config/database.php';
     
-    $id= filter_var($id, FILTER_VALIDATE_INT);
-    echo $id;
+    // $id= filter_var($id, FILTER_VALIDATE_INT);
+    // echo $id;
     if (!$id){
        header('Location: /admin');
     }
@@ -39,12 +39,12 @@
        $carpetaImagenes='../../imagenes/';
        $nombreImagen="";
        if ($img['name']) {
-           unlink($carpetaImagenes.$producto['imagen']);
+           unlink($carpetaImagenes.$producto['Imagen']);
            $nombreImagen=md5(uniqid(rand(),true)).".jpg";
            move_uploaded_file($img['tmp_name'], $carpetaImagenes.$nombreImagen);
        }
        else{
-           $nombreImagen = $producto['imagen'];
+           $nombreImagen = $producto['Imagen'];
        }
        
 
@@ -76,7 +76,7 @@
        }      
 
        if ($resultado) {
-           header('Location:/admin?resultado=1');
+           header('Location:/admin?resultado=2');
        }
    }  
 ?>
@@ -88,29 +88,29 @@
                 <?php echo $error; ?>
             </div>
     <?php } ?>
-    <form action="/admin/propiedades/actualizar.php/?id=<?php echo $id;?>" class="formulario" method="POST" enctype="multipart/form-data">
+    <form action="/admin/operaciones/actualizar.php/?id=<?php echo $id;?>" class="formulario-ad" method="POST" enctype="multipart/form-data">
         <fieldset>
-            <legend>Informacion General</legend>
+            <legend class="legend-ad">Informacion General</legend>
 
-            <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" value = "<?php echo $nombre; ?>">
+            <label class="label-ad" for="nombre">Nombre: </label>
+            <input class="input-ad" type="text" id="nombre" name="nombre" value = "<?php echo $nombre; ?>">
 
-            <label for="precio">Precio:</label>
-            <input type="text" name="precio" id="precio" value = "<?php echo $precio; ?>">
+            <label class="label-ad" for="precio">Precio:</label>
+            <input class="input-ad" type="number" name="precio" id="precio" value = "<?php echo $precio; ?>">
 
-            <label for="imagen">Imagen:</label>
-            <input type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg" value = "../imagenes/<?php echo $imagen; ?>">
+            <label class="label-ad" for="imagen">Imagen:</label>
+            <input class="input-ad" type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg"><img src="/../../imagenes/<?php echo $imagen?>" alt="Actual">
 
-            <label for="Descripcion">Descripcion:</label>
-            <input type="text-area" name="descripcion" id="descripcion" value = "<?php echo $descripcion; ?>" >
+            <label class="label-ad" for="Descripcion">Descripcion:</label>
+            <input class="textarea-ad" type="text-area" name="descripcion" id="descripcion" value = "<?php echo $descripcion; ?>" >
 
-            <label for="categoria">Categoria:</label>
-            <input type="text-area" name="categoria" id="categoria" value = "<?php echo $categoria; ?>">
+            <label class="label-ad" for="categoria">Categoria:</label>
+            <input class="textarea-ad" type="text-area" name="categoria" id="categoria" value = "<?php echo $categoria; ?>">
 
         </fieldset>
-        <input type="submit" name="" id="" class="boton boton-verde" value="Actualizar propiedad">
+        <input type="submit" name="" id="" class="btn-add" value="Actualizar propiedad">
     </form>
-    <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+    <a href="/admin/index.php" class="btn-add">Volver</a>
 </main>
 
 <?php

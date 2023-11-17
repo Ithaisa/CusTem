@@ -1,11 +1,9 @@
 <?php
 require '../includes/funciones.php';
 require '../includes/config/database.php';
-$db=conectarBD();
-incluirTemplate('header');
 if(isset($_POST['btnIniciar'])){
-    if(iniciarUsuario($db)){
-        header('Location: /admin/index.php');
+    if(iniciarUsuario()){
+        header('Location:/admin/index.php');
         
     } else{
         echo 'no iniciado';
