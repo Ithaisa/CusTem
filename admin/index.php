@@ -20,7 +20,7 @@
     <?php if (intval($resultado)===1){ ?>
         <p class="alerta exito">Anuncio creado correctamente</p>
     <?php } ?>
-    <a href="/admin/propiedades/crear.php" class="boton boton-verde">Añadir producto</a>
+    <a href="/admin/productos/crear.php" class="boton boton-verde">Añadir producto</a>
     <table>
         <!-- Fila 1 -->
         <tr>
@@ -37,8 +37,8 @@
                 <td> <?php echo $fila['Nombre']?> </td>
                 <td> <?php echo $fila['Descripcion']?> </td>
                 <td class="operaciones"> 
-                    <a href="/admin/propiedades/actualizar.php/?id=<?php echo $fila['IDProducto'];?>">Actualizar propiedad</a>
-                    <a class="boton boton-verde" href="/admin/propiedades/borrar.php/?id=<?php echo $fila['IDProducto'];?>">Borrar propiedad</button>
+                    <a href="/admin/operaciones/actualizar.php/?id=<?php echo $fila['IDProducto'];?>">Actualizar propiedad</a>
+                    <a class="boton boton-verde" href="/admin/operaciones/borrar.php/?id=<?php echo $fila['IDProducto'];?>">Borrar propiedad</button>
                 </td>
             </tr>
             <?php }?>
