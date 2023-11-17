@@ -93,12 +93,12 @@
             <input class="textarea-ad" type="text-area" name="categoria" id="categoria" placeholder="Ropa, taza..." value=<?php echo $categoria?>>
 
         </fieldset>
-        <fieldset>
+        <!-- <fieldset>
             <legend>Vendedor</legend>
             <select name="vendedor" id="vendedor">
                 <option value="1">César</option>
             </select>
-        </fieldset>    
+        </fieldset>     -->
         <input type="submit" name="" id="" class="btn-add" value="Crear propiedad">
     </form>
     <a href="/admin/index.php" class="btn-add">Volver</a>
