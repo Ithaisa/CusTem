@@ -55,8 +55,8 @@
                 <td> <?php echo $fila['Precio']?> </td>
                 <td> <?php echo $fila['Descripcion']?> </td>
                 <td class="operaciones"> 
-                    <a href="/admin/operaciones/actualizar.php/?id=<?php echo $fila['IDProducto'];?>">Actualizar propiedad</a>
-                    <a class="boton boton-verde" href="/admin/operaciones/borrar.php/?id=<?php echo $fila['IDProducto'];?>">Borrar propiedad</button>
+                    <a class="btn-add" href="/admin/operaciones/actualizar.php/?id=<?php echo $fila['IDProducto'];?>">Actualizar propiedad</a>
+                    <a class="btn-add" href="/admin/operaciones/borrar.php/?id=<?php echo $fila['IDProducto'];?>">Borrar propiedad</button>
                 </td>
             </tr>
             <?php }?>

@@ -20,7 +20,6 @@
     $precio = $producto['Precio'];
     $categoria= $producto['Categoria'];
     $imagen = $producto['Imagen'];
-    echo $imagen;
 
     //Limite de kbs para la imagen
     define('MEDIDA', 1024);

@@ -38,7 +38,7 @@
         else if (!$categoria) {
             $errores[]="Debes añadir una categoría";
         }
-        else if (!$imagen) {
+        else if (!$imagen['name']) {
             $errores[]="Debes seleccionar una imagen";
         }
 
@@ -78,19 +78,19 @@
             <legend class="legend-ad">Informacion General</legend>
 
             <label class="label-ad" for="titulo">Nombre: </label>
-            <input class="input-ad" type="text" id="nombre" name="nombre">
+            <input class="input-ad" type="text" id="nombre" name="nombre" value=<?php echo $nombre?>>
 
             <label  class="label-ad" for="precio">Precio:</label>
-            <input class="input-ad" type="number" name="precio" id="precio">
+            <input class="input-ad" type="number" name="precio" id="precio" value=<?php echo $precio?>>
 
             <label class="label-ad" for="imagen">Imagen:</label>
             <input class="input-ad" type="file" name="imagen" id="imagen"  accept="image/jpeg, image/png, image/jpg">
             
             <label class="label-ad" for="Descripcion">Descripcion:</label>
-            <input class="textarea-ad" type="text-area" name="descripcion" id="descripcion" placeholder="Descripción del producto...">
+            <input class="textarea-ad" type="text-area" name="descripcion" id="descripcion" placeholder="Descripción del producto..." value=<?php echo $descripcion?>>
 
             <label class="label-ad" for="estacionamiento">Categoría:</label>
-            <input class="textarea-ad" type="text-area" name="categoria" id="categoria" placeholder="Ropa, taza...">
+            <input class="textarea-ad" type="text-area" name="categoria" id="categoria" placeholder="Ropa, taza..." value=<?php echo $categoria?>>
 
         </fieldset>
         <fieldset>
