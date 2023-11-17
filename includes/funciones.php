@@ -42,7 +42,7 @@
     function crearUsuario(){
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
-        $db=conectarBD(); 
+        $db=conectarBD();
         $query = "SELECT *  FROM Usuario WHERE mail='$usuario'";
         $result = $db->query($query);
         $resultado = false;
