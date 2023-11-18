@@ -7,6 +7,7 @@
 - **Nombre del Proyecto:** CusTem
 - **Equipo de Desarrollo:** Ithaisa Sánchez González, Ismael Pablo Torrado Sáenz de Jubera y Césarw
 - **Fecha de Inicio:** 04/10/2023
+- **1º Entrega del Proyecto:** 18/11/2023
 - **Fecha de Finalización:** -----
 
 ## Casos de Uso de CusTem
@@ -98,7 +99,7 @@ El usuario sin registrar no dispone de ninguna acción la cual no esté implemen
 - Clientes (1:n) DisenosPersonalizados
 
 ### Diagrama de Flujo:
-![Diagrama de Flujo](https://hackmd.io/_uploads/BJtFQhjQT.jpg)
+![Diagrama de Flujo](Diagrama%20de%20Flujo.png)
 
 
 
