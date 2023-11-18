@@ -99,7 +99,7 @@ El usuario sin registrar no dispone de ninguna acción la cual no esté implemen
 - Clientes (1:n) DisenosPersonalizados
 
 ### Diagrama de Flujo:
-![Diagrama de Flujo](https://hackmd.io/_uploads/BJtFQhjQT.jpg)
+![Diagrama de Flujo](Diagrama%20de%20Flujo.png)
 
 
 
