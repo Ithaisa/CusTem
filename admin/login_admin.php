@@ -1,12 +1,21 @@
 <?php
+// $res = $_GET['res']??null;
 require '../includes/funciones.php';
 require '../includes/config/database.php';
+// if($res){
+//     echo 'Usuario creado correctamente. Inicia sesión.';
+// }
+
+session_start();
+// if(isset($_SESSION['id'])){
+//     header('Location: /admin/index.php');
+// }
 if(isset($_POST['btnIniciar'])){
     if(iniciarUsuario()){
-        header('Location:/admin/index.php');
+        header('Location: /admin/index.php');
         
     } else{
-        echo 'no iniciado';
+        echo 'Error al iniciar sesión.';
     }
 }
 ?>
@@ -24,6 +33,9 @@ if(isset($_POST['btnIniciar'])){
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit" class="btn" name="btnIniciar">Iniciar sesión</button>
+            <div class ="signup-link">
+            <a href="/admin/signup_admin.php">Registrarse</a>
+            </div>
         </form>
     </div>
 </body>

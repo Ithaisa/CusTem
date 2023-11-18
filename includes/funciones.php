@@ -25,8 +25,8 @@
             $hashedPassword = $row["password"];
             if (password_verify($password, $hashedPassword)) {
                 // Contraseña válida, inicio de sesión exitoso
-                session_start();
-                $_SESSION["id"] = $row['id'];
+                // session_start();
+                $_SESSION['id'] = $row['id'];
                 $result = true;
             } else {
             echo "Contraseña incorrecta";
@@ -44,7 +44,7 @@
     function crearUsuario(){
     $db = conectarBD();
     // Obtén los datos del formulario
-    $usuario = $_POST['usuario'];
+    $usuario = $_POST['username'];
     $password = $_POST['password'];
     $result = false;
 
@@ -58,16 +58,19 @@
         // El usuario ya existe
         $result = false;
     } else {
-        // Hash de la contraseña
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+         // Hash de la contraseña
+         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        // Inserta el nuevo usuario
-        $stmt = $db->prepare("INSERT INTO usuario (mail, password) VALUES (?, ?)");
-        $stmt->bind_param('ss', $usuario, $passwordHash);
-        
-        if ($stmt->execute()) {
-            $result = true;
-        }
+         // Inserta el nuevo usuario
+         $stmt = $db->prepare("INSERT INTO usuario (mail, password) VALUES (?, ?)");
+         $stmt->bind_param('ss', $usuario, $passwordHash);
+ 
+         if ($stmt->execute()) {
+             $result = true;
+         } else {
+             // Manejo de errores
+             error_log("Error al insertar usuario: " . $stmt->error);
+         }
     }
     return $result;
 }

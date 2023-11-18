@@ -3,7 +3,9 @@
     require '../includes/funciones.php';
     require '../includes/config/database.php';
     incluirTemplate('header');
-    session_start();
+    
+    if(session_status() !== PHP_SESSION_ACTIVE){session_start();}
+    
     if(!isset($_SESSION['id'])){
        header('Location: /admin/login_admin.php');
     }
