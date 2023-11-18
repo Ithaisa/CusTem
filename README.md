@@ -7,7 +7,7 @@
 - **Nombre del Proyecto:** CusTem
 - **Equipo de Desarrollo:** Ithaisa Sánchez González, Ismael Pablo Torrado Sáenz de Jubera y Césarw
 - **Fecha de Inicio:** 04/10/2023
-- **1º entrega del Proyecto:** 18/11/2023
+- **1º Entrega del Proyecto:** 18/11/2023
 - **Fecha de Finalización:** -----
 
 ## Casos de Uso de CusTem
