@@ -23,12 +23,21 @@ namespace App;
     
         public function validar() {
     
-            if(!$this->id) {
-                self::$errores[] = "Debes añadir un mail.";
+            if(!$this->nombre) {
+                self::$errores[] = "Debes añadir un nombre.";
             }
     
-            if(!$this->password) {
-                self::$errores[] = 'La contraseña es obligatoria';
+            if(!$this->descripcion) {
+                self::$errores[] = 'Debes añadir una descripción.';
+            }
+            if(!$this->precio) {
+                self::$errores[] = 'Debes añadir una descripción.';
+            }
+            if(!$this->categoria) {
+                self::$errores[] = 'Debes añadir una descripción.';
+            }
+            if(!$this->imagen) {
+                self::$errores[] = 'Debes añadir una descripción.';
             }
             return self::$errores;
         }
